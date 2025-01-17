@@ -12,7 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-function ModeToggle() {
+export function ModeToggle() {
   const { setTheme } = useTheme();
 
   return (
@@ -38,5 +38,3 @@ function ModeToggle() {
     </DropdownMenu>
   );
 }
-
-export default ModeToggle;

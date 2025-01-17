@@ -1,49 +1,15 @@
 import SingleBook from "./SingleBook";
 
-function ListBooks() {
+interface ListBooksProps {
+  books: Book[];
+}
+
+function ListBooks({ books }: ListBooksProps) {
   return (
     <div className="flex flex-wrap gap-2 justify-center">
-      <SingleBook
-        author="F. Scott Fitzgerald"
-        title="The Great Gatsby"
-        likes={10}
-      />
-      <SingleBook
-        author="F. Scott Fitzgerald"
-        title="The Great Gatsby"
-        likes={10}
-      />
-      <SingleBook
-        author="F. Scott Fitzgerald"
-        title="The Great Gatsby"
-        likes={10}
-      />
-      <SingleBook
-        author="F. Scott Fitzgerald"
-        title="The Great Gatsby"
-        likes={10}
-      />
-      <SingleBook
-        author="F. Scott Fitzgerald"
-        title="The Great Gatsby"
-        likes={10}
-      />
-      <SingleBook
-        author="F. Scott Fitzgerald"
-        title="The Great Gatsby"
-        likes={10}
-      />
-
-      <SingleBook
-        author="F. Scott Fitzgerald"
-        title="The Great Gatsby"
-        likes={10}
-      />
-      <SingleBook
-        author="F. Scott Fitzgerald"
-        title="The Great Gatsby"
-        likes={10}
-      />
+      {books.map((book: Book) => (
+        <SingleBook key={book.id} book={book} />
+      ))}
     </div>
   );
 }
